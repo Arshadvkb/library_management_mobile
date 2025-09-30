@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'home_controller.dart';
 
-class home_view extends StatelessWidget {
-  const home_view({super.key}); 
+class HomeView extends StatelessWidget {
+  const HomeView({super.key}); 
 
   @override
   Widget build(BuildContext context) {
     final HomeController controller = HomeController();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home View'),
+        title: Text('Home'),
         backgroundColor: Color(0xFF6200EE),
       ),
       body: FutureBuilder(
