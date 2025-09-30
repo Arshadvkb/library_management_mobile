@@ -12,7 +12,7 @@ class HomeController {
 			try {
 				// Use http scheme and allow custom url
 				url = "http://localhost:8000/";
-				final response = await http.get(Uri.parse("${url}api/admin/view-books"));
+				final response = await http.get(Uri.parse("${url}api/book/view-books"));
 				if (response.statusCode == 200) {
 					final data = jsonDecode(response.body);
 					// Support both list and object with 'books' key
