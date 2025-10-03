@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_management_mobile/app/home/home_view.dart';
+import 'package:library_management_mobile/app/login/login_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Library management',
      
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/login',
       routes: {
         '/home': (context) => const HomeView(),
+        '/login':(context)=>const LoginView()
       }
     );
   }
