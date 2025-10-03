@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Library management',
      
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/login',
       routes: {
         '/home': (context) => const HomeView(),
         '/login':(context)=>const LoginView()

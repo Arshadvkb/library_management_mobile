@@ -1,6 +1,6 @@
-// login_view.dart (unchanged from previous version)
+
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; // Assuming you imported this previously
+import 'package:provider/provider.dart';
 import 'login_controller.dart';
 
 class LoginView extends StatelessWidget {
@@ -72,3 +72,5 @@ class _LoginScreen extends StatelessWidget {
     );
   }
 }
+
+

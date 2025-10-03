@@ -11,7 +11,7 @@ class HomeController {
 		Future<void> fetchData(String url) async {
 			try {
 				// Use http scheme and allow custom url
-				url = "http://localhost:8000/";
+				url = "http://192.168.1.6:8000/";
 				final response = await http.get(Uri.parse("${url}api/book/view-books"));
 				if (response.statusCode == 200) {
 					final data = jsonDecode(response.body);

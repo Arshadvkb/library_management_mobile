@@ -1,8 +1,8 @@
-// login_controller.dart
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:library_management_mobile/app/home/home_view.dart';
 
 
 class LoginController extends ChangeNotifier {
@@ -38,8 +38,9 @@ class LoginController extends ChangeNotifier {
     notifyListeners();
 
     try {
+      const url = "http://192.168.1.6:8000/";
       final response = await http.post(
-        Uri.parse('http://localhost:8000/api/auth/login'), 
+        Uri.parse('${url}api/auth/login'), 
         headers: {'Content-Type': 'application/json'},
         body: jsonEncode({
           'email': _email,
@@ -50,10 +51,19 @@ class LoginController extends ChangeNotifier {
       if (response.statusCode == 200) {
         // Parse the JSON response
         final data = jsonDecode(response.body);
-        // Handle success, e.g., store token
+       final success=data['success'];
+       print(success);
+       
+        if(success==true){
         print('Login successful'); 
         Fluttertoast.showToast(msg: "success");
+      
         
+        }
+        else{
+            print('Login failed'); 
+        Fluttertoast.showToast(msg: "Login failed");
+        }
           
       } else {
         // Handle error from backend
